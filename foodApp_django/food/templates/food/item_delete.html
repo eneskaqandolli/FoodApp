@@ -1,0 +1,15 @@
+{% extends "food/base.html" %}
+{% load static %}
+
+{% block css_files %}<link rel="stylesheet" href="{% static "food/item_delete.css" %}">{% endblock %}
+{% block title %}
+    <title>FoodApp</title>
+{% endblock %}
+
+{% block content %}
+    <form method="POST">
+        {% csrf_token %}
+        <h2>Are you sure that you want to delete "{{item.item_name | title}}"</h2>
+        <button>Confirm</button>
+    </form>
+{% endblock %}

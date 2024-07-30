@@ -1,0 +1,19 @@
+{% extends "food/base.html" %}
+{% load static %}
+
+{% block css_files %}<link rel="stylesheet" href="{% static "user/login.css" %}">{% endblock %}
+{% block title %}
+    <title>FoodApp</title>
+{% endblock %}
+
+{% block content %}
+<section>
+    <div class="login-container">
+      <h1>Log In</h1>
+      <form method="POST">
+        {% csrf_token %} {{ form.as_p }}
+        <button type="submit">Log In</button>
+      </form>
+    </div>
+  </section>
+{% endblock %}

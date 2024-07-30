@@ -1,0 +1,21 @@
+{% extends "food/base.html" %}
+{% load static %}
+
+{% block css_files %}<link rel="stylesheet" href="{% static "food/item_form.css" %}">{% endblock %}
+{% block title %}
+    <title>FoodApp</title>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Add Item</h1>
+    <form method="POST" enctype="multipart/form-data" class="form">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form.as_p }}
+        </div>
+        <button type="submit" class="btn">Submit</button>
+    </form>
+</div>
+
+{% endblock %}

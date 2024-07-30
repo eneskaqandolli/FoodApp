@@ -1,0 +1,12 @@
+{% extends "food/base.html" %}
+{% load static %}
+
+{% block css_files %}<link rel="stylesheet" href="{% static "food/item_delete.css" %}">{% endblock %}
+{% block title %}
+    <title>FoodApp</title>
+{% endblock %}
+
+{% block content %}
+    <h1>{{user.username}}</h1>
+    <img width="400px" src="{{user.profile.image.url}}">
+{% endblock %}

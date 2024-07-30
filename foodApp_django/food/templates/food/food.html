@@ -1,0 +1,23 @@
+{% extends "food/base.html" %}
+{% load static %}
+
+{% block css_files %}<link rel="stylesheet" href="{% static "food/food.css" %}">{% endblock %}
+{% block title %}
+    <title>FoodApp</title>
+{% endblock %}
+
+{% block content %}
+<section>
+    {% for item in items %}
+    <div class="card">
+        <img src="{{item.image.url}}" alt="Card Image" class="card-img">
+        <div class="card-content">
+            <h2 class="card-title">{{item.item_name}}</h2>
+            <a href="{% url "food:detail" item.id %}" class="card-btn">Learn More</a>
+            <p class="posted">"Posted By {{item.user_name | title}}"</p>
+        </div>
+    </div>
+    {% endfor %}
+</section>
+
+{% endblock %}

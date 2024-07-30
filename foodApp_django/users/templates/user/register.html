@@ -1,0 +1,26 @@
+{% extends "food/base.html" %}
+{% load static %}
+
+{% block css_files %}<link rel="stylesheet" href="{% static "user/register.css" %}">{% endblock %}
+{% block title %}
+    <title>FoodApp</title>
+{% endblock %}
+
+{% block content %}
+  <section>
+    <div class="container">
+      <h1>Register</h1>
+      <form method="POST" class="register-form">
+        {% csrf_token %} {% for field in form %}
+        <div class="form-group">
+          <label for="{{ field.id_for_label }}">{{ field.label_tag }}</label>
+          {{ field }} {% for error in field.errors %}
+          <div class="error">{{ error }}</div>
+          {% endfor %}
+        </div>
+        {% endfor %}
+        <button type="submit" class="btn">Register</button>
+      </form>
+    </div>
+  </section>
+{% endblock %}

@@ -1,0 +1,39 @@
+/* styles.css */
+
+.item-detail {
+    margin: 3rem;
+}
+
+.item-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    background-color: #f2f2f2;
+    width: 50%;
+    padding: 3rem;
+}
+
+.item-img {
+    width: 600px;
+    margin-bottom: 20px;
+}
+
+.item-title {
+    font-size: 2em;
+    color: #333;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.item-desc {
+    font-size: 1.2em;
+    color: #666;
+    text-align: center;
+}
+
+.item-price {
+    font-size: 1.5em;
+    color: #007BFF;
+    text-align: center;
+}

@@ -1,0 +1,21 @@
+{% extends "food/base.html" %}
+{% load static %}
+
+{% block css_files %}<link rel="stylesheet" href="{% static "food/food_detail.css" %}">{% endblock %}
+{% block title %}
+    <title>FoodApp</title>
+{% endblock %}
+
+{% block content %}
+<section class="item-detail">
+    <div class="item-content">
+        <img src="{{ item.image.url }}" alt="{{ item.item_name }}" class="item-img">
+        <h1 class="item-title">{{ item.item_name }}</h1>
+        <p class="item-desc">{{ item.item_desc }}</p>
+        <p class="item-price">Price: ${{ item.item_price }}</p>
+        <p class="posted">"Posted By {{item.user_name | title}}"</p>
+
+        <a href="{% url "food:delete" item.id %}">Delete Item</a>
+    </div>
+</section>
+{% endblock %}
